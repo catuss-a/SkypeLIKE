@@ -1,9 +1,7 @@
 SkypeLIKE
 =========
 
-Download and open:
-
-[BabelSlide.pdf](BabelSlide.pdf)
+Download: [BabelSlide.pdf](BabelSlide.pdf) for more informations
 
 LOG_Babel
 =========
