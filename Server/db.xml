@@ -1,0 +1,14 @@
+<users>
+ <user password="chanh" login="chanh" contacts="axel alex john rodolph chanh zaz koala thor antoine joe scrat belga"/>
+ <user password="axel" login="axel" contacts="axel alex john rodolph chanh zaz koala thor antoine joe scrat belga"/>
+ <user password="alex" login="alex" contacts="axel alex john rodolph chanh zaz koala thor antoine joe scrat belga"/>
+ <user password="rodolph" login="rodolph" contacts="axel alex john rodolph chanh zaz koala thor antoine joe scrat belga"/>
+ <user password="john" login="john" contacts="axel alex john rodolph chanh zaz koala thor antoine joe scrat belga"/>
+ <user password="zaz" login="zaz" contacts="zaz koala thor antoine joe scrat belga"/>
+ <user password="koala" login="koala" contacts="zaz koala thor antoine joe scrat belga"/>
+ <user password="thor" login="thor" contacts="zaz koala thor antoine joe scrat belga"/>
+ <user password="antoine" login="antoine" contacts="zaz koala thor antoine joe scrat belga"/>
+ <user password="joe" login="joe" contacts="zaz koala thor antoine joe scrat belga"/>
+ <user password="scrat" login="scrat" contacts="zaz koala thor antoine joe scrat belga"/>
+ <user password="belga" login="belga" contacts="zaz koala thor antoine joe scrat belga"/>
+</users>

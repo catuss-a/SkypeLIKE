@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>BabelLoginWindow</class>
+ <widget class="QMainWindow" name="BabelLoginWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>510</width>
+    <height>371</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="Resources.qrc">
+    <normaloff>:/images/icon/Resources/babel_icon_b.png</normaloff>:/images/icon/Resources/babel_icon_b.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">BabelLoginWindow
+{
+	background-image: url(:/images/background/Resources/login_background.png)
+}
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="5" rowspan="12">
+     <spacer name="spacer_12">
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="0" column="8" rowspan="12">
+     <spacer name="spacer_13">
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="9" column="6" colspan="2">
+     <spacer name="spacer_5">
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="3" column="6" colspan="2">
+     <spacer name="spacer_3">
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="0" column="6" colspan="2">
+     <spacer name="spacer">
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="0" column="4" rowspan="12">
+     <spacer name="spacer_11">
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="0" column="9" rowspan="12">
+     <spacer name="spacer_14">
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="0" column="10" rowspan="12">
+     <spacer name="spacer_15">
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="0" column="3" rowspan="12">
+     <spacer name="spacer_10">
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="0" column="1" rowspan="12">
+     <spacer name="spacer_8">
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="0" column="11" rowspan="12">
+     <spacer name="spacer_16">
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="0" column="12" rowspan="12">
+     <spacer name="spacer_17">
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="0" column="2" rowspan="12">
+     <spacer name="spacer_9">
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="0" column="0" rowspan="12">
+     <spacer name="spacer_7">
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="0" column="13" rowspan="12">
+     <spacer name="spacer_18">
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="11" column="6" colspan="2">
+     <spacer name="spacer_6">
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="6" column="6" colspan="2">
+     <spacer name="spacer_4">
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="2" column="6" colspan="2">
+     <spacer name="spacer_2">
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="1" column="6" colspan="2">
+     <widget class="QLabel" name="WelcomeToBabel">
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:11pt; font-weight:600; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt; color:#c07ad3;&quot;&gt;Welcome to Babel.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:14pt; color:#c07ad3;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="6">
+     <widget class="QLabel" name="BabelName">
+      <property name="text">
+       <string>Babel Name</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="6" colspan="2">
+     <widget class="QLineEdit" name="BabelNameLineEdit"/>
+    </item>
+    <item row="8" column="6" colspan="2">
+     <widget class="QLineEdit" name="PasswordLineEdit">
+      <property name="echoMode">
+       <enum>QLineEdit::Password</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="6">
+     <widget class="QLabel" name="Password">
+      <property name="text">
+       <string>Password</string>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="6" colspan="2">
+     <widget class="QPushButton" name="SignInButton">
+      <property name="text">
+       <string>Sign In</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+   <zorder>spacer_12</zorder>
+   <zorder>spacer_13</zorder>
+   <zorder>spacer_5</zorder>
+   <zorder>spacer_3</zorder>
+   <zorder>spacer</zorder>
+   <zorder>spacer_11</zorder>
+   <zorder>spacer_14</zorder>
+   <zorder>spacer_15</zorder>
+   <zorder>spacer_10</zorder>
+   <zorder>spacer_8</zorder>
+   <zorder>spacer_16</zorder>
+   <zorder>spacer_17</zorder>
+   <zorder>spacer_9</zorder>
+   <zorder>spacer_7</zorder>
+   <zorder>spacer_18</zorder>
+   <zorder>spacer_6</zorder>
+   <zorder>spacer_4</zorder>
+   <zorder>spacer_2</zorder>
+   <zorder>WelcomeToBabel</zorder>
+   <zorder>BabelName</zorder>
+   <zorder>BabelNameLineEdit</zorder>
+   <zorder>PasswordLineEdit</zorder>
+   <zorder>Password</zorder>
+   <zorder>SignInButton</zorder>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>510</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionQuit"/>
+   </widget>
+   <widget class="QMenu" name="menuTools">
+    <property name="title">
+     <string>Tools</string>
+    </property>
+    <widget class="QMenu" name="menuLanguage_2">
+     <property name="title">
+      <string>Language</string>
+     </property>
+     <addaction name="separator"/>
+     <addaction name="actionEnglish"/>
+     <addaction name="actionFrench"/>
+     <addaction name="actionSpanish"/>
+     <addaction name="action1337"/>
+    </widget>
+    <addaction name="menuLanguage_2"/>
+    <addaction name="actionSettings"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionAbout"/>
+    <addaction name="actionAbout_Qt"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuTools"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <action name="actionQuit">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/images/icon/Resources/exit.png</normaloff>:/images/icon/Resources/exit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Quit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+   <property name="iconVisibleInMenu">
+    <bool>true</bool>
+   </property>
+  </action>
+  <action name="actionEnglish">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/images/icon/Resources/english_flag_icon.png</normaloff>:/images/icon/Resources/english_flag_icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>English</string>
+   </property>
+   <property name="iconVisibleInMenu">
+    <bool>true</bool>
+   </property>
+  </action>
+  <action name="actionFrench">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/images/icon/Resources/french_flag_icon.png</normaloff>:/images/icon/Resources/french_flag_icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>French</string>
+   </property>
+   <property name="iconVisibleInMenu">
+    <bool>true</bool>
+   </property>
+  </action>
+  <action name="actionSpanish">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/images/icon/Resources/spain_flag_icon.png</normaloff>:/images/icon/Resources/spain_flag_icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Spanish</string>
+   </property>
+   <property name="iconVisibleInMenu">
+    <bool>true</bool>
+   </property>
+  </action>
+  <action name="action1337">
+   <property name="text">
+    <string>1337</string>
+   </property>
+  </action>
+  <action name="actionIcon">
+   <property name="icon">
+    <iconset>
+     <normaloff>Resources/english_flag_icon.png</normaloff>Resources/english_flag_icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>icon</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About Babel</string>
+   </property>
+  </action>
+  <action name="actionAbout_Qt">
+   <property name="text">
+    <string>About Qt</string>
+   </property>
+  </action>
+  <action name="actionSettings">
+   <property name="text">
+    <string>Settings</string>
+   </property>
+  </action>
+  <action name="actionDisconnect">
+   <property name="text">
+    <string>Disconnect</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="Resources.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>actionQuit</sender>
+   <signal>activated()</signal>
+   <receiver>BabelLoginWindow</receiver>
+   <slot>QuitCommand()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action1337</sender>
+   <signal>activated()</signal>
+   <receiver>BabelLoginWindow</receiver>
+   <slot>changeLanguageTo1337()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>330</x>
+     <y>237</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionEnglish</sender>
+   <signal>activated()</signal>
+   <receiver>BabelLoginWindow</receiver>
+   <slot>changeLanguageToEnglish()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>330</x>
+     <y>237</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionFrench</sender>
+   <signal>activated()</signal>
+   <receiver>BabelLoginWindow</receiver>
+   <slot>changeLanguageToFrench()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>330</x>
+     <y>237</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionSpanish</sender>
+   <signal>activated()</signal>
+   <receiver>BabelLoginWindow</receiver>
+   <slot>changeLanguageToSpanish()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>330</x>
+     <y>237</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionAbout</sender>
+   <signal>activated()</signal>
+   <receiver>BabelLoginWindow</receiver>
+   <slot>openAboutWindow()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>214</x>
+     <y>184</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionSettings</sender>
+   <signal>activated()</signal>
+   <receiver>BabelLoginWindow</receiver>
+   <slot>openSettings()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>254</x>
+     <y>185</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PasswordLineEdit</sender>
+   <signal>returnPressed()</signal>
+   <receiver>SignInButton</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>254</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>254</x>
+     <y>306</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SignInButton</sender>
+   <signal>clicked()</signal>
+   <receiver>BabelLoginWindow</receiver>
+   <slot>signIn()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>254</x>
+     <y>306</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>254</x>
+     <y>185</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>QuitCommand()</slot>
+  <slot>changeLanguageToEnglish()</slot>
+  <slot>changeLanguageToFrench()</slot>
+  <slot>changeLanguageToSpanish()</slot>
+  <slot>changeLanguageTo1337()</slot>
+  <slot>signIn()</slot>
+  <slot>openAboutWindow()</slot>
+  <slot>openSettings()</slot>
+ </slots>
+</ui>

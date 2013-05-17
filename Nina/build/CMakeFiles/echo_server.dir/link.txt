@@ -1,0 +1,1 @@
+/usr/bin/c++   -W -Wextra -ansi -Wall -Wno-long-long    CMakeFiles/echo_server.dir/__/examples/echo_server.cpp.o  -o ../bin/echo_server -rdynamic ../lib/libnina.so -lrt -Wl,-rpath,/home/axl/Downloads/babel-2014-champi_d/Nina/lib 

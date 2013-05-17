@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>BabelMainWindow</class>
+ <widget class="QMainWindow" name="BabelMainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>537</width>
+    <height>464</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>Babel</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="Resources.qrc">
+    <normaloff>:/images/icon/Resources/babel_icon_b.png</normaloff>:/images/icon/Resources/babel_icon_b.png</iconset>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QWidget" name="usernameZoneWidget" native="true">
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <property name="margin">
+        <number>0</number>
+       </property>
+       <item row="0" column="1">
+        <widget class="QLabel" name="loginLabel">
+         <property name="text">
+          <string notr="true">Username</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QToolButton" name="statusToolButton">
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset resource="Resources.qrc">
+           <normaloff>:/images/icon/Resources/babel_icon_b_connected.png</normaloff>:/images/icon/Resources/babel_icon_b_connected.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>22</width>
+           <height>22</height>
+          </size>
+         </property>
+         <property name="popupMode">
+          <enum>QToolButton::InstantPopup</enum>
+         </property>
+         <property name="autoRaise">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QWidget" name="contactZoneWidget" native="true">
+      <property name="minimumSize">
+       <size>
+        <width>200</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>300</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_4">
+       <item row="0" column="0">
+        <widget class="QListWidget" name="contactListWidget">
+         <property name="contextMenuPolicy">
+          <enum>Qt::CustomContextMenu</enum>
+         </property>
+         <property name="alternatingRowColors">
+          <bool>true</bool>
+         </property>
+         <property name="selectionMode">
+          <enum>QAbstractItemView::SingleSelection</enum>
+         </property>
+         <property name="sortingEnabled">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="0" column="1" rowspan="2">
+     <widget class="QTabWidget" name="contactTabWidget">
+      <property name="minimumSize">
+       <size>
+        <width>313</width>
+        <height>347</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="tabsClosable">
+       <bool>true</bool>
+      </property>
+      <property name="movable">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>537</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuBabel">
+    <property name="title">
+     <string>Babel</string>
+    </property>
+    <addaction name="actionDisconnect"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuTools">
+    <property name="title">
+     <string>Tools</string>
+    </property>
+    <widget class="QMenu" name="menuLanguage">
+     <property name="title">
+      <string>Language</string>
+     </property>
+     <addaction name="actionEnglish"/>
+     <addaction name="actionFrench"/>
+     <addaction name="actionSpanish"/>
+     <addaction name="action1337"/>
+    </widget>
+    <addaction name="menuLanguage"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionAbout"/>
+    <addaction name="actionAbout_Qt"/>
+   </widget>
+   <widget class="QMenu" name="menuContact">
+    <property name="title">
+     <string>Contact</string>
+    </property>
+    <addaction name="actionAdd_Contact"/>
+    <addaction name="separator"/>
+    <addaction name="actionStart_Call"/>
+    <addaction name="actionStart_Chat"/>
+    <addaction name="separator"/>
+    <addaction name="actionRemove"/>
+   </widget>
+   <addaction name="menuBabel"/>
+   <addaction name="menuContact"/>
+   <addaction name="menuTools"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionEnglish">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/images/icon/Resources/english_flag_icon.png</normaloff>:/images/icon/Resources/english_flag_icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>English</string>
+   </property>
+   <property name="iconVisibleInMenu">
+    <bool>true</bool>
+   </property>
+  </action>
+  <action name="actionFrench">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/images/icon/Resources/french_flag_icon.png</normaloff>:/images/icon/Resources/french_flag_icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>French</string>
+   </property>
+   <property name="iconVisibleInMenu">
+    <bool>true</bool>
+   </property>
+  </action>
+  <action name="actionSpanish">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/images/icon/Resources/spain_flag_icon.png</normaloff>:/images/icon/Resources/spain_flag_icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Spanish</string>
+   </property>
+   <property name="iconVisibleInMenu">
+    <bool>true</bool>
+   </property>
+  </action>
+  <action name="action1337">
+   <property name="text">
+    <string>1337</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/images/icon/Resources/exit.png</normaloff>:/images/icon/Resources/exit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Exit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+   <property name="iconVisibleInMenu">
+    <bool>true</bool>
+   </property>
+  </action>
+  <action name="actionAdd_Contact">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/images/icon/Resources/babel_icon_add_contact.png</normaloff>:/images/icon/Resources/babel_icon_add_contact.png</iconset>
+   </property>
+   <property name="text">
+    <string>Add Contact</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+B</string>
+   </property>
+   <property name="iconVisibleInMenu">
+    <bool>true</bool>
+   </property>
+  </action>
+  <action name="actionStart_Call">
+   <property name="text">
+    <string>Start Call</string>
+   </property>
+  </action>
+  <action name="actionStart_Chat">
+   <property name="text">
+    <string>Start Chat</string>
+   </property>
+  </action>
+  <action name="actionRename">
+   <property name="text">
+    <string>Rename</string>
+   </property>
+   <property name="shortcut">
+    <string>F2</string>
+   </property>
+  </action>
+  <action name="actionRemove">
+   <property name="text">
+    <string>Remove</string>
+   </property>
+   <property name="shortcut">
+    <string>Del</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About Babel</string>
+   </property>
+  </action>
+  <action name="actionAbout_Qt">
+   <property name="text">
+    <string>About Qt</string>
+   </property>
+  </action>
+  <action name="actionDisconnect">
+   <property name="text">
+    <string>Disconnect</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+D</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="Resources.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>statusToolButton</sender>
+   <signal>clicked()</signal>
+   <receiver>statusToolButton</receiver>
+   <slot>showMenu()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>31</x>
+     <y>57</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>31</x>
+     <y>57</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action1337</sender>
+   <signal>activated()</signal>
+   <receiver>BabelMainWindow</receiver>
+   <slot>setLanguageTo1337()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>268</x>
+     <y>205</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionExit</sender>
+   <signal>activated()</signal>
+   <receiver>BabelMainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>268</x>
+     <y>205</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionEnglish</sender>
+   <signal>activated()</signal>
+   <receiver>BabelMainWindow</receiver>
+   <slot>setLanguageToEnglish()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>268</x>
+     <y>205</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionSpanish</sender>
+   <signal>activated()</signal>
+   <receiver>BabelMainWindow</receiver>
+   <slot>setLanguageToSpanish()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>268</x>
+     <y>205</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionFrench</sender>
+   <signal>activated()</signal>
+   <receiver>BabelMainWindow</receiver>
+   <slot>setLanguageToFrench()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>268</x>
+     <y>205</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>contactListWidget</sender>
+   <signal>customContextMenuRequested(QPoint)</signal>
+   <receiver>BabelMainWindow</receiver>
+   <slot>customTreeViewMenu(QPoint)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>108</x>
+     <y>230</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>268</x>
+     <y>205</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionAbout</sender>
+   <signal>activated()</signal>
+   <receiver>BabelMainWindow</receiver>
+   <slot>openAboutWindow()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>268</x>
+     <y>205</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionAdd_Contact</sender>
+   <signal>activated()</signal>
+   <receiver>BabelMainWindow</receiver>
+   <slot>addContact()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>268</x>
+     <y>205</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionRemove</sender>
+   <signal>activated()</signal>
+   <receiver>BabelMainWindow</receiver>
+   <slot>removeContact()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>268</x>
+     <y>205</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>contactListWidget</sender>
+   <signal>itemActivated(QListWidgetItem*)</signal>
+   <receiver>BabelMainWindow</receiver>
+   <slot>doubleClickContact(QListWidgetItem*)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>108</x>
+     <y>257</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>268</x>
+     <y>212</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionStart_Chat</sender>
+   <signal>activated()</signal>
+   <receiver>BabelMainWindow</receiver>
+   <slot>startChat()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>268</x>
+     <y>212</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>contactTabWidget</sender>
+   <signal>tabCloseRequested(int)</signal>
+   <receiver>BabelMainWindow</receiver>
+   <slot>closeTab(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>371</x>
+     <y>214</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>268</x>
+     <y>212</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionStart_Call</sender>
+   <signal>activated()</signal>
+   <receiver>BabelMainWindow</receiver>
+   <slot>startCall()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>268</x>
+     <y>231</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionDisconnect</sender>
+   <signal>activated()</signal>
+   <receiver>BabelMainWindow</receiver>
+   <slot>disconnect()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>268</x>
+     <y>231</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>openEmoticonFrame()</slot>
+  <slot>setLanguageToEnglish()</slot>
+  <slot>setLanguageToFrench()</slot>
+  <slot>setLanguageToSpanish()</slot>
+  <slot>setLanguageTo1337()</slot>
+  <slot>customTreeViewMenu(QPoint)</slot>
+  <slot>openAboutWindow()</slot>
+  <slot>aboutToShowContactMenu(QAction*)</slot>
+  <slot>addContact()</slot>
+  <slot>removeContact()</slot>
+  <slot>renameContact()</slot>
+  <slot>doubleClickContact(QListWidgetItem*)</slot>
+  <slot>startChat()</slot>
+  <slot>closeTab(int)</slot>
+  <slot>startCall()</slot>
+  <slot>disconnect()</slot>
+ </slots>
+</ui>

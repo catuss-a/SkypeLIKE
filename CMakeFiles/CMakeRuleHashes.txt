@@ -1,0 +1,26 @@
+# Hashes of file build rules.
+f53c532f685c2ac9b6f491d9fad3729f Nina/build/CMakeFiles/doc
+08bf821793e7fe9a21e9763c924befb6 Nina/build/CMakeFiles/doxygen
+9a459945bc18f6ddbb185ede35e984a3 Plugin/Gui/babel_1337.qm
+ea485baf2c33c1bcbfc12630287e4089 Plugin/Gui/babel_en.qm
+e7bbbce420cdebf171783a475a9371f1 Plugin/Gui/babel_es.qm
+264a0b9784c8a6bebd4aab6af4f794c5 Plugin/Gui/babel_fr.qm
+457a9538d7476164876b7f2204641c58 Plugin/Gui/moc_BabelAboutDialog.cxx
+50e0d7855fda9fde262a896d330f2505 Plugin/Gui/moc_BabelAddContactDialog.cxx
+cc3bbd58cc640d42b2f11098196220b2 Plugin/Gui/moc_BabelConnectionSettings.cxx
+a84c8ca65d0e84edccf795de6003411c Plugin/Gui/moc_BabelConsole.cxx
+69978d32246f5c2d771cc9a9a05769a3 Plugin/Gui/moc_BabelConversation.cxx
+b4b80b0a784357e8830a12a3ba6c043f Plugin/Gui/moc_BabelHelpConsole.cxx
+a75c214c43640f18d5df545b5676a09f Plugin/Gui/moc_BabelLoginWindow.cxx
+ed7d66d2c6a65ba69ee47073e01bdf28 Plugin/Gui/moc_BabelMainWindow.cxx
+bdf00b02fdba844169154618be7acf4d Plugin/Gui/moc_EmoticonFrame.cxx
+e7d51bff51f3803caab01851d54dac0c Plugin/Gui/qrc_Resources.cxx
+0dfe59b9fca80215cafe0d2cacbedf16 Plugin/Gui/ui_babelaboutdialog.h
+8eacdee4e3b840d2680fe92f5151095d Plugin/Gui/ui_babeladdcontactdialog.h
+2a305d3426ebe5e2eaad5a18aaeda89e Plugin/Gui/ui_babelconnectionsettings.h
+d6ccbfac720ece13c4790975eb24758e Plugin/Gui/ui_babelconsole.h
+7f35c1dd2e66ec0bdda000e6dcc53f8f Plugin/Gui/ui_babelconversation.h
+cf994c76a0fd6a700b61a39a9981595a Plugin/Gui/ui_babelhelpconsole.h
+ec074bc6f4e5fc7fb25f84b62fdb7432 Plugin/Gui/ui_babelloginwindow.h
+8269fac16bc08747ade3236ca48013f9 Plugin/Gui/ui_babelmainwindow.h
+76adb61edc018620a3895876ca48bd66 Plugin/Gui/ui_emoticonframe.h

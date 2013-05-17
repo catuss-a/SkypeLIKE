@@ -1,0 +1,59 @@
+<RCC>
+    <qresource prefix="/images/background">
+        <file>Resources/login_background.png</file>
+        <file>Resources/labgay.png</file>
+    </qresource>
+    <qresource prefix="/images/icon">
+        <file>Resources/english_flag_icon.png</file>
+        <file>Resources/french_flag_icon.png</file>
+        <file>Resources/spain_flag_icon.png</file>
+        <file>Resources/exit.png</file>
+        <file>Resources/babel_icon.png</file>
+        <file>Resources/babel_icon_b.png</file>
+        <file>Resources/video_call_icon.png</file>
+        <file>Resources/call_icon.png</file>
+        <file>Resources/babel_icon_b_tool.png</file>
+        <file>Resources/babel_icon_b_busy.png</file>
+        <file>Resources/babel_icon_add_contact.png</file>
+        <file>Resources/babel_icon_b_idle.png</file>
+        <file>Resources/babel_icon_b_connected.png</file>
+        <file>Resources/babel_icon_b_disconnected.png</file>
+        <file>Resources/hangup_icon.png</file>
+        <file>Resources/pause_icon.png</file>
+        <file>Resources/play_icon.png</file>
+    </qresource>
+    <qresource prefix="/images/emote">
+        <file>Resources/face-angel.png</file>
+        <file>Resources/face-angry.png</file>
+        <file>Resources/face-cool.png</file>
+        <file>Resources/face-crying.png</file>
+        <file>Resources/face-devilish.png</file>
+        <file>Resources/face-embarrassed.png</file>
+        <file>Resources/face-glasses.png</file>
+        <file>Resources/face-kiss.png</file>
+        <file>Resources/face-laugh.png</file>
+        <file>Resources/face-monkey.png</file>
+        <file>Resources/face-plain.png</file>
+        <file>Resources/face-raspberry.png</file>
+        <file>Resources/face-sad.png</file>
+        <file>Resources/face-sick.png</file>
+        <file>Resources/face-smile.png</file>
+        <file>Resources/face-smile-big.png</file>
+        <file>Resources/face-smirk.png</file>
+        <file>Resources/face-surprise.png</file>
+        <file>Resources/face-tired.png</file>
+        <file>Resources/face-uncertain.png</file>
+        <file>Resources/face-wink.png</file>
+        <file>Resources/face-worried.png</file>
+    </qresource>
+    <qresource prefix="/images/logo">
+        <file>Resources/babel_logo.png</file>
+        <file>Resources/babel_logo_medium.png</file>
+    </qresource>
+    <qresource prefix="/translations">
+        <file>babel_1337.qm</file>
+        <file>babel_en.qm</file>
+        <file>babel_es.qm</file>
+        <file>babel_fr.qm</file>
+    </qresource>
+</RCC>

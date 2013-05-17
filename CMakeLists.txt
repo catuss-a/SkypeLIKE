@@ -1,0 +1,17 @@
+cmake_minimum_required(VERSION 2.6)
+
+if (UNIX)
+   set (CMAKE_CXX_FLAGS "-W -Wextra -ansi -Wall")
+   set (CMAKE_CXX_FLAGS_DEBUG "-W -Wall -Wextra -ansi -g3")
+   set (CMAKE_CXX_FLAGS_RELEASE "-W -Wextra -ansi -Wno-strict-aliasing -O2 -Wall")
+endif (UNIX)
+
+set (CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/CMake/Modules/")
+add_subdirectory("Nina/build")
+add_subdirectory("Babe")
+add_subdirectory("Application")
+add_subdirectory("Plugin/Codec")
+add_subdirectory("Plugin/Audio")
+add_subdirectory("Plugin/Gui")
+add_subdirectory("Plugin/Network")
+add_subdirectory("Server")

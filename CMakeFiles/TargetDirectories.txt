@@ -1,0 +1,14 @@
+/home/axl/Downloads/babel-2014-champi_d/Babe/CMakeFiles/Babe.dir
+/home/axl/Downloads/babel-2014-champi_d/Plugin/Network/CMakeFiles/Babe_NinaNetwork.dir
+/home/axl/Downloads/babel-2014-champi_d/Plugin/Audio/CMakeFiles/Babe_PortAudioAudio.dir
+/home/axl/Downloads/babel-2014-champi_d/Plugin/Gui/CMakeFiles/Babe_QtGui.dir
+/home/axl/Downloads/babel-2014-champi_d/Plugin/Codec/CMakeFiles/Babe_SpeexCodec.dir
+/home/axl/Downloads/babel-2014-champi_d/Application/CMakeFiles/Babel.dir
+/home/axl/Downloads/babel-2014-champi_d/Server/CMakeFiles/BabelServer.dir
+/home/axl/Downloads/babel-2014-champi_d/Nina/build/CMakeFiles/doc.dir
+/home/axl/Downloads/babel-2014-champi_d/Nina/build/CMakeFiles/doxygen.dir
+/home/axl/Downloads/babel-2014-champi_d/Nina/build/CMakeFiles/echo_server.dir
+/home/axl/Downloads/babel-2014-champi_d/Nina/build/CMakeFiles/nina.dir
+/home/axl/Downloads/babel-2014-champi_d/Nina/build/CMakeFiles/nina_unit_test.dir
+/home/axl/Downloads/babel-2014-champi_d/Nina/build/CMakeFiles/sock_acceptor.dir
+/home/axl/Downloads/babel-2014-champi_d/Nina/build/CMakeFiles/sock_connector.dir

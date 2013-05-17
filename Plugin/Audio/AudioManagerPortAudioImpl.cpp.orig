@@ -1,0 +1,270 @@
+//
+// AudioManagerPortAudioImpl.cpp for  in /home/champi_d//AdvancedCPP/Babel
+// 
+// Made by alexandre champion
+// Login   <champi_d@epitech.net>
+// 
+// Started on  Wed Nov 16 12:26:03 2011 alexandre champion
+// Last update Sun Dec  4 01:58:56 2011 alexandre champion
+//
+
+#include <string>
+#include "AudioManagerPortAudioImpl.hpp"
+
+AudioManagerPortAudioImpl::AudioManagerPortAudioImpl(int sampleRate,
+						     int frameSize) :
+  mIsOn(false),
+  mOStream(NULL),
+  mIStream(NULL),
+  mSampleRate(sampleRate),
+  mFrameSize(frameSize),
+  mErr(paNoError)
+{
+  Babe::AudioManager::getSingletonPtr()->setAudioFrameSize(PortAudio::PortAudioFrame::ENC_FRAME_SIZE);
+  if ((mErr = Pa_Initialize()) != paNoError) {
+    Babe::LOGE("Error: Pa_Initialize: ");
+    return ;
+  }
+  if (!this->OpenStream(INPUT))
+    return ;
+  if (!this->OpenStream(OUTPUT))
+    return ;
+}
+
+AudioManagerPortAudioImpl::~AudioManagerPortAudioImpl()
+{
+  if ((mErr = Pa_CloseStream(mOStream)) != paNoError
+      || (mErr = Pa_CloseStream(mIStream)) != paNoError)
+    Babe::LOGE("Error: Pa_CloseStream: ");
+  if ((mErr = Pa_Terminate()) != paNoError)
+    Babe::LOGE("Error: Pa_Terminate: ");
+}
+
+bool AudioManagerPortAudioImpl::init()
+{
+  Babe::LOG("AudioManagerPortAudioImpl initialized");
+  mNetwork = Babe::NetworkManager::getSingletonPtr();
+  return true;
+}
+
+void AudioManagerPortAudioImpl::shutdown()
+{
+  while (!mRecordedData.empty()) {
+    mRecordedData.pop();
+  }
+  while (!mPlayData.empty()) {
+    mPlayData.pop();
+  }
+}
+
+void AudioManagerPortAudioImpl::update(float)
+{
+  if (mIsOn)
+    {
+      PortAudio::PortAudioFrame* frameToSend = 0;
+
+      frameToSend = static_cast<PortAudio::PortAudioFrame*>(recordAudioFrame());
+      if (frameToSend)
+	{
+	  frameToSend->encode();
+	  char* data = frameToSend->getEncodedData();
+	  // std::cout << "update: ";
+	  for (int i = 0; i < PortAudio::PortAudioFrame::ENC_FRAME_SIZE ; ++i)
+	    std::cout << "[" << (int)data[i] << "]";
+	  std::cout << std::endl;
+	  mNetwork->sendData(PortAudio::PortAudioFrame::ENC_FRAME_SIZE, data);
+	  delete data;
+	  delete frameToSend;
+      }
+    }
+}
+
+void AudioManagerPortAudioImpl::on()
+{
+  if (!mIsOn) {
+    if ((mErr = Pa_StartStream(mIStream)) != paNoError) {
+      Babe::LOGE("Error: Pa_StartStreamIstream: ");
+      return ;
+    }
+    if ((mErr = Pa_StartStream(mOStream)) != paNoError) {
+      Babe::LOGE("Error: Pa_StartStreamOstream: ");
+      return ;
+    }
+  }
+  mIsOn = true;
+}
+
+void AudioManagerPortAudioImpl::off()
+{
+  if (mIsOn) {
+    if ((mErr = Pa_StopStream(mIStream)) != paNoError) {
+      Babe::LOGE("Error: Pa_StopStream: ");
+      return ;
+    }
+    if ((mErr = Pa_StopStream(mOStream)) != paNoError) {
+      Babe::LOGE("Error: Pa_StopStream: ");
+      return ;
+    }
+  }
+  mIsOn = false;
+}
+
+Babe::AudioFrame* AudioManagerPortAudioImpl::recordAudioFrame()
+{
+  PortAudio::PortAudioFrame *ret = 0;
+  PortAudio::PortAudioFrame *frame = 0;
+
+  if (!mRecordedData.empty()) {
+    frame = mRecordedData.front();
+    ret = new PortAudio::PortAudioFrame(*frame);
+    mRecordedData.pop();
+  }
+  return ret;
+}
+
+void AudioManagerPortAudioImpl::playAudioFrame(Babe::AudioFrame* frame)
+{
+  PortAudio::PortAudioFrame *f;
+
+  f = static_cast<PortAudio::PortAudioFrame*>(frame);
+  if (f) {
+    if (f->getState() == Babe::AudioFrame::ENCODED)
+      f->decode();
+    mPlayData.push(f);
+  }
+}
+
+void AudioManagerPortAudioImpl::playAudioFrame(char const* frame)
+{
+  PortAudio::PortAudioFrame *f =
+    new PortAudio::PortAudioFrame(frame);
+
+  if (f) {
+    // std::cout << "play :";
+    // for (int i = 0; i < PortAudio::PortAudioFrame::ENC_FRAME_SIZE ; ++i)
+    //   std::cout << "[" << (int)(frame[i]) << "]";
+    // std::cout << std::endl;
+    f->decode();
+    mPlayData.push(f);
+  }
+}
+
+bool AudioManagerPortAudioImpl::OpenStream(eAudioType type)
+{
+  if (type == INPUT) {
+    if (!this->SetParameters(&mIParameters, Pa_GetDefaultInputDevice()))
+      return false;
+    mIParameters.suggestedLatency =
+      Pa_GetDeviceInfo(mIParameters.device)->defaultLowInputLatency;
+  } else if (type == OUTPUT) {
+    if (!this->SetParameters(&mOParameters, Pa_GetDefaultOutputDevice()))
+      return false;
+    this->mOParameters.suggestedLatency =
+      Pa_GetDeviceInfo(mOParameters.device)->defaultLowOutputLatency;
+  } else return false;
+  if ((mErr = Pa_OpenStream(type == INPUT ? &mIStream:&mOStream,
+			    type == INPUT ? &mIParameters:0,
+			    type == OUTPUT ? &mOParameters:0,
+			    mSampleRate,
+			    mFrameSize,
+			    paClipOff,
+			    &AudioManagerPortAudioImpl::CallBack,
+			    this)) != paNoError) {
+    Babe::LOGE("Error: Pa_OpenStream: ");
+    return false;
+  }
+  return true;
+}
+
+bool AudioManagerPortAudioImpl::SetParameters(PaStreamParameters *params,
+					      PaDeviceIndex inputDevice,
+					      int chanCount,
+					      PaSampleFormat spFormat,
+					      void *hostAPI)
+{
+  if ((mErr = inputDevice) == paNoDevice) {
+    Babe::LOGE("Error: Pa_getDefaultDevice: ");
+    return false;
+  }
+  params->device = inputDevice;
+  params->channelCount = chanCount;
+  params->sampleFormat = spFormat;
+  params->hostApiSpecificStreamInfo = hostAPI;
+  return true;
+}
+
+int AudioManagerPortAudioImpl::CallBack(const void *input, void *output,
+					unsigned long frameCount,
+					const PaStreamCallbackTimeInfo* timeInfo,
+					PaStreamCallbackFlags statusFlags,
+					void *userData)
+{
+  AudioManagerPortAudioImpl *ptrThis;
+
+  ptrThis = static_cast<AudioManagerPortAudioImpl*>(userData);
+  if (input)
+    {
+      return  (ptrThis->StartRecord(input, output,
+				    frameCount, timeInfo,
+				    statusFlags));
+    }
+  else if (output) {
+    return (ptrThis->StartVoice(input, output,
+				frameCount, timeInfo,
+				statusFlags));
+  }
+  return 0;
+}
+
+int AudioManagerPortAudioImpl::StartVoice(const void *input, void *output,
+					  unsigned long frameCount,
+					  const PaStreamCallbackTimeInfo* timeInfo,
+					  PaStreamCallbackFlags statusFlags)
+{
+  PortAudio::PortAudioFrame::t_sample *wonOutPut =
+    static_cast<PortAudio::PortAudioFrame::t_sample*>(output);
+  PortAudio::PortAudioFrame::t_sample *data;
+  PortAudio::PortAudioFrame *frame;
+
+  for (int i = 0; i < frameCount; ++i)
+    wonOutPut[i] = 0;
+  if (output)
+    {
+      if (!mPlayData.empty()) {
+	frame = mPlayData.front();
+  	data = frame->getRawData();
+  	for (int i = 0; i < frameCount; ++i)
+  	  wonOutPut[i] = data[i];
+  	mPlayData.pop();
+  	delete data;
+      }
+      return paContinue;
+    }
+  return paComplete;
+}
+
+int AudioManagerPortAudioImpl::StartRecord(const void *input, void *output,
+					   unsigned long frameCount,
+					   const PaStreamCallbackTimeInfo* timeInfo,
+					   PaStreamCallbackFlags statusFlags)
+{
+  PortAudio::PortAudioFrame::t_sample const* ronInput
+    = static_cast<PortAudio::PortAudioFrame::t_sample const*>(input);
+  PortAudio::PortAudioFrame::t_sample* recordedSound =
+    new PortAudio::PortAudioFrame::t_sample[frameCount];
+
+  for (int i = 0; i < frameCount; ++i)
+    recordedSound[i] = 0;
+  if (input)
+    {
+      for (int i = 0; i < frameCount; ++i) {
+  	recordedSound[i] = ronInput[i];
+      }
+      PortAudio::PortAudioFrame *nFrame =
+	new PortAudio::PortAudioFrame(recordedSound);
+      mRecordedData.push(nFrame);
+      delete recordedSound;
+      return paContinue;
+    }
+  return paComplete;
+}

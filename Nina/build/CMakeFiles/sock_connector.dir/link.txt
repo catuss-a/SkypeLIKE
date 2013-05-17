@@ -1,0 +1,1 @@
+/usr/bin/c++   -W -Wextra -ansi -Wall -Wno-long-long    CMakeFiles/sock_connector.dir/__/examples/sock_connector.cpp.o  -o ../bin/sock_connector -rdynamic ../lib/libnina.so -lrt -Wl,-rpath,/home/axl/Downloads/babel-2014-champi_d/Nina/lib 

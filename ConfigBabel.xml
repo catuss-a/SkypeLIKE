@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+  <systems>
+    <system type="Audio"    plugin_path="Babe_PortAudioAudio"   plugin_name="AudioPluginPortAudio"/>
+    <system type="Codec"    plugin_path="Babe_SpeexCodec"       plugin_name="CodecPluginSpeex"/>
+    <system type="Gui"      plugin_path="Babe_QtGui"            plugin_name="GuiPluginQt"/>
+    <system type="Network"  plugin_path="Babe_NinaNetwork"      plugin_name="NetworkPluginNina" init_ordering="1"/>
+  </systems>
+  <network host="10.224.7.39" port="sip" family="IPv4"/>
+</config>

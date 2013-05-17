@@ -1,0 +1,12 @@
+dlopen libBabe_PortAudioAudio.so: wrong ELF class: ELFCLASS32
+ApplicationManager::loadPlugins Babe_PortAudioAudio failed
+dlopen libBabe_QtGui.so: wrong ELF class: ELFCLASS32
+ApplicationManager::loadPlugins Babe_QtGui failed
+dlopen libBabe_NinaNetwork.so: wrong ELF class: ELFCLASS32
+ApplicationManager::loadPlugins Babe_NinaNetwork failed
+Couldn't find the plugin 'AudioPluginPortAudio'
+AudioPluginPortAudio not found
+Couldn't find the plugin 'GuiPluginQt'
+GuiPluginQt not found
+Couldn't find the plugin 'NetworkPluginNina'
+NetworkPluginNina not found
