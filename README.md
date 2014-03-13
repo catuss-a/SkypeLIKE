@@ -1,3 +1,8 @@
+SkypeLIKE
+-=========
+-
+-Download: [BabelSlide.pdf](https://mega.co.nz/#!s9FyxJjR!lDF6drNEmeRLb8NOKi_BGZmCqn7bK3Ww1NIuaRLZMXo) for more informations
+
 LOG_SKYPELike
 =========
 
