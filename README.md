@@ -1,9 +1,4 @@
-SkypeLIKE
-=========
-
-Download: [BabelSlide.pdf](BabelSlide.pdf) for more informations
-
-LOG_Babel
+LOG_SKYPELike
 =========
 
 ApplicationManager created
